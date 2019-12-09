@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script>
+      function insert(num) {
+        document.form.textview.value = document.form.textview.value + num;
+      }
+
+      function equal() {
+        var exp = document.form.textview.value;
+        if (exp) {
+          document.form.textview.value = eval(exp);
+        }
+      }
+
+      function clean() {
+        document.form.textview.value = "";
+      }
+
+      function back() {
+        var exp = document.form.textview.value;
+        document.form.textview.value = exp.substring(0, exp.length - 1);
+      }
+    </script>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .button {
+        width: 54px;
+        height: 50px;
+        font-size: 25px;
+        margin: 2px;
+        cursor: pointer;
+      }
+      .textview {
+        width: 217px;
+        margin: 5px;
+        font-size: 25px;
+        padding: 5px;
+      }
+
+      .main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .bg {
+        background: linear-gradient(to right, #4568dc, #b06ab3);
+        height: 750px;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg"><h1>Simple Javascript Calculator</h1></div>
+    <div class="main">
+      <form action="" name="form">
+        <input type="text" class="textview" name="textview" id="" />
+      </form>
+      <table>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              onclick="clean()"
+              value="c"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              onclick="back()"
+              value="<"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              onclick="insert('/')"
+              class="button"
+              value="/"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              onclick="insert('*')"
+              value="x"
+              class="button"
+              name=""
+              id=""
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="7"
+              onclick="insert(7)"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              onclick="insert(8)"
+              value="8"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              onclick="insert(9)"
+              class="button"
+              type="button"
+              value="9"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              onclick="insert('-')"
+              type="button"
+              class="button"
+              value="-"
+              name=""
+              id=""
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              onclick="insert(4)"
+              type="button"
+              value="4"
+              class="button"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              onclick="insert(5)"
+              type="button"
+              value="5"
+              class="button"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              onclick="insert(6)"
+              type="button"
+              class="button"
+              value="6"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="button"
+              onclick="insert('+')"
+              value="+"
+              name=""
+              id=""
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <input
+              onclick="insert(1)"
+              class="button"
+              type="button"
+              value="1"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              onclick="insert(2)"
+              type="button"
+              class="button"
+              value="2"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              onclick="insert(3)"
+              type="button"
+              class="button"
+              value="3"
+              name=""
+              id=""
+            />
+          </td>
+          <td rowspan="2">
+            <input
+              type="button"
+              class="button"
+              value="="
+              style="height: 109px;"
+              onclick="equal()"
+              name=""
+              id=""
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input
+              onclick="insert(0)"
+              type="button"
+              class="button"
+              value="0"
+              style="width: 116px;"
+              name=""
+              id=""
+            />
+          </td>
+          <td>
+            <input
+              type="button"
+              class="button"
+              value="."
+              onclick="insert('.')"
+              name=""
+              id=""
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
